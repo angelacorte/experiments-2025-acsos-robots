@@ -5,7 +5,7 @@ import it.unibo.alchemist.model.molecules.SimpleMolecule
 import it.unibo.alchemist.model.sensors.DepotsSensor
 import it.unibo.alchemist.model.sensors.LocationSensor
 import it.unibo.collektive.aggregate.api.Aggregate
-import it.unibo.collektive.aggregate.api.Aggregate.Companion.neighboring
+import it.unibo.collektive.aggregate.api.neighboring
 import it.unibo.collektive.alchemist.device.sensors.EnvironmentVariables
 import it.unibo.formalization.GreedyAllocationStrategy
 import it.unibo.formalization.Node as NodeFormalization
