@@ -1,3 +1,40 @@
+## [1.13.9](https://github.com/angelacorte/experiments-2025-acsos-robots/compare/1.13.8...1.13.9) (2025-07-28)
+
+### Dependency updates
+
+* **deps:** update dependency gradle to v8.14.3 ([02aa5d4](https://github.com/angelacorte/experiments-2025-acsos-robots/commit/02aa5d4babaf18c253771cc69cc10aa0a7397c5e))
+* **deps:** update dependency matplotlib to v3.10.3 ([f5945f8](https://github.com/angelacorte/experiments-2025-acsos-robots/commit/f5945f83d1e7ef68fe072bca51d26558f6a8ce41))
+* **deps:** update dependency org.jetbrains.kotlin.jvm to v2.1.21 ([7ff0c41](https://github.com/angelacorte/experiments-2025-acsos-robots/commit/7ff0c41079d9c081c0243c6225e624eb19edbede))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.135 ([fb79ac6](https://github.com/angelacorte/experiments-2025-acsos-robots/commit/fb79ac65e6fa2bd782312fffc6f98e6bedc21810))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.136 ([8d9040f](https://github.com/angelacorte/experiments-2025-acsos-robots/commit/8d9040fd175b083f49354e41456c1bb4ef96aac3))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.137 ([d4b849c](https://github.com/angelacorte/experiments-2025-acsos-robots/commit/d4b849c718efa57d335ba64eebe014f16b2fa688))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.138 ([d47abb9](https://github.com/angelacorte/experiments-2025-acsos-robots/commit/d47abb9e4daad2e143887c9c06a780cfa86d57e6))
+* **deps:** update dependency xarray to v2025.6.1 ([908a13b](https://github.com/angelacorte/experiments-2025-acsos-robots/commit/908a13b154149af29233709053b073063d0aa5d1))
+* **deps:** update dependency xarray to v2025.7.0 ([34f7202](https://github.com/angelacorte/experiments-2025-acsos-robots/commit/34f72027d7aedd5002c88f076d4e332116b77857))
+* **deps:** update dependency xarray to v2025.7.1 ([8921355](https://github.com/angelacorte/experiments-2025-acsos-robots/commit/892135597915a0384d962d1aa22a2fb48e50053d))
+* **deps:** update node.js to 22.16 ([29af4db](https://github.com/angelacorte/experiments-2025-acsos-robots/commit/29af4db11f7ab9bcc9506119e0b9cd1bce251e12))
+* **deps:** update node.js to 22.17 ([5bdcb9b](https://github.com/angelacorte/experiments-2025-acsos-robots/commit/5bdcb9b2e775290d8240b5ba172493b81cbcaf47))
+* **deps:** update plugin gitsemver to v5.1.7 ([b717122](https://github.com/angelacorte/experiments-2025-acsos-robots/commit/b717122c788ff30546c7fa2dca212be650a12355))
+* **deps:** update plugin kotlin-qa to v0.87.1 ([9d975e3](https://github.com/angelacorte/experiments-2025-acsos-robots/commit/9d975e39b3d9d012799aa529598653b18d6e33ac))
+* **deps:** update plugin kotlin-qa to v0.88.0 ([6ac817c](https://github.com/angelacorte/experiments-2025-acsos-robots/commit/6ac817c4d3fa691d1b2beeb3587c6dbfeb824df8))
+* **deps:** update plugin kotlin-qa to v0.89.2 ([54b4a7f](https://github.com/angelacorte/experiments-2025-acsos-robots/commit/54b4a7f31e53291b18953e35ba7443789d0ede90))
+* **deps:** update plugin kotlin-qa to v0.90.2 ([da44216](https://github.com/angelacorte/experiments-2025-acsos-robots/commit/da44216d714e475865f98bec4f877812f7237861))
+* **deps:** update plugin kotlin-qa to v0.91.0 ([e61b64b](https://github.com/angelacorte/experiments-2025-acsos-robots/commit/e61b64bb4082b790c3664e4a80f958d6e64f765c))
+* **deps:** update plugin kotlin-qa to v0.92.0 ([cd0f1a4](https://github.com/angelacorte/experiments-2025-acsos-robots/commit/cd0f1a4fecdd616e78b590a5a405367357770495))
+* **deps:** update plugin multijvmtesting to v3.4.3 ([3c8bd4b](https://github.com/angelacorte/experiments-2025-acsos-robots/commit/3c8bd4b700d1a016d40b1bdba2573b0509e1161a))
+* **deps:** update plugin org.gradle.toolchains.foojay-resolver-convention to v1 ([aef9a68](https://github.com/angelacorte/experiments-2025-acsos-robots/commit/aef9a6840a522bfb4df807cde99eaeee56fc5553))
+* **deps:** update python docker tag to v3.13.4 ([8659a6d](https://github.com/angelacorte/experiments-2025-acsos-robots/commit/8659a6db273f0a3f5e8391e5b7ec986e42cae778))
+* **deps:** update python docker tag to v3.13.5 ([c5612b7](https://github.com/angelacorte/experiments-2025-acsos-robots/commit/c5612b756353c14e7b726b442147de536e8b938c))
+
+### Bug Fixes
+
+* update readme ([46469f0](https://github.com/angelacorte/experiments-2025-acsos-robots/commit/46469f06b92c5b3379cd7f7a29b157cf21c9c7c4))
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.7.20 ([a367b72](https://github.com/angelacorte/experiments-2025-acsos-robots/commit/a367b729c23c8425dd917f577075dbb668fa02db))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4 ([810eef5](https://github.com/angelacorte/experiments-2025-acsos-robots/commit/810eef5fa8539bf7f4c17af3a1d9e77d47eb74bd))
+
 ## [1.13.6](https://github.com/angelacorte/experiments-2025-acsos-robots/compare/1.13.5...1.13.6) (2025-04-27)
 
 ### Bug Fixes
