@@ -87,7 +87,7 @@ In order to successfully download and execute the graphical experiments are need
 - Linux, macOS and Windows systems capable of running [Java](https://www.oracle.com/java/technologies/javase/jdk19-archive-downloads.html) 17 (or higher);
 - 4GB free space on disk (the system will automatically download its dependencies through Gradle) (**NOTE** that if you want to download or generate data as in [Reproduce the experiment results](#reproduce-the-experiment-results), you will need an additional ~15GB free space);
 - GPU with minimal OpenGL capabilities (OpenGL 2.0);
-- 4GB RAM.
+- 4GB RAM (to generate the charts, we used a PC with 32GB RAM, with lower amounts the process could take a very long time or crash).
 
 The project uses [Gradle](https://gradle.org) as a build tool,
 and all the project dependencies are listed in the `gradle\libs.versions.toml` file.
@@ -223,6 +223,7 @@ Depending on the platform, there may be different ways to set the environment va
 - If you're using Command Prompt (cmd.exe): ```set MAX_SEED=0 && gradlew.bat run<ExperimentName>Graphic```
 - If you're using PowerShell: ```$env:MAX_SEED = 0; .\gradlew.bat run<ExperimentName>Graphic``` \
 For the sake of simplicity, we will show Bash compatible commands below.
+Moreover, due to Alchemist's limitations, the graphical interface will not appear if run on a docker container.
 
 The corresponding YAML simulation files to the experiments cited above are the following:
 - _depotsBaseline_: benchmark experiment, where the replanning is done at the end of each robot's mission ```MAX_SEED=0 ./gradlew runDepotsBaselineGraphic```,
@@ -280,10 +281,10 @@ which creates a global state of the system in a distributed manner and then repl
 The main steps are:
 1. Gather distributed information: Collect all tasks in the system and maintain a set of all node IDs ever seen through gossip communication
 2. Share task completion status: Use gossip to propagate information about which tasks have been completed across the network
-1. Discover available robots: Gossip node coordinates to build a global view of all robots in the system within communication range
-1. Check stability condition: Evaluate whether the current system state is stable enough to continue with existing plans
-1. Replan if unstable: When stability condition fails, filter out completed tasks and run a greedy allocation strategy to generate new global plans for all robots
-1. Execute plan: Either follow the newly computed plan (if replanning occurred) or continue with the existing plan (if system is stable)
+3. Discover available robots: Gossip node coordinates to build a global view of all robots in the system within communication range
+4. Check stability condition: Evaluate whether the current system state is stable enough to continue with existing plans
+5. Replan if unstable: When stability condition fails, filter out completed tasks and run a greedy allocation strategy to generate new global plans for all robots
+6. Execute plan: Either follow the newly computed plan (if replanning occurred) or continue with the existing plan (if system is stable)
 
 
 The `leaderReplanning` function implements the leader-based planning approach,
@@ -291,11 +292,11 @@ where a leader is elected in a distributed and adaptive way (resilient to failur
 and is responsible for deciding the plan for all robots in the swarm.
 In this case, the main steps are:
 1. Elect a leader: Use bounded election algorithm within a maximum distance bound to select a leader node based on distance field (hop count)
-1. Gather network information: Collect all node IDs in the system and gossip node coordinates to build a view of available robots
-1. Check stability conditions: Verify if the current leader is stable over a time window and if the robot network composition is stable
-1. Leader-driven replanning: Only the leader triggers replanning when either the leader role is unstable or the robot network changes, using a greedy allocation strategy on uncompleted tasks
-1. Distribute plans via gradient: Use gradient cast to propagate the new plan from the leader to all nodes in the network following the distance field
-1. Execute coordinated action: All nodes follow their assigned plans when a stable leader exists, otherwise continue with previous allocations
+2. Gather network information: Collect all node IDs in the system and gossip node coordinates to build a view of available robots
+3. Check stability conditions: Verify if the current leader is stable over a time window and if the robot network composition is stable
+4. Leader-driven replanning: Only the leader triggers replanning when either the leader role is unstable or the robot network changes, using a greedy allocation strategy on uncompleted tasks
+5. Distribute plans via gradient: Use gradient cast to propagate the new plan from the leader to all nodes in the network following the distance field
+6. Execute coordinated action: All nodes follow their assigned plans when a stable leader exists, otherwise continue with previous allocations
 
 ### Reproduce the experiment results
 
@@ -337,12 +338,20 @@ we provide the data collected in the experiments at [this link](https://figshare
 #### Generate the charts
 1. Make sure you have Python 3.10 or higher installed.
 2. If you have downloaded the data from the provided link, make sure to move the extracted `data` folder inside the repository.
+    The folder structure should be the following:
+    ```txt
+    experiments-2025-acsos-robots/
+    ├── data/
+    │   ├── baseline-random-failure/
+    │   ├── oracle-random-failure/
+    │   └── runtime-random-failure/
+    ```
 3. Install the required Python packages by running:
     ```bash
     pip install --upgrade pip
     pip install -r requirements.txt
     ```
-4. Run the script to process the data and generate the charts:
+4. Run the script to process the data and generate the charts (this process may take some time):
     ```bash
     python plotter_all.py
     ```
