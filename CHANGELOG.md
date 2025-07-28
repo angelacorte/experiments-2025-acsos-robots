@@ -1,3 +1,15 @@
+## [1.13.11](https://github.com/angelacorte/experiments-2025-acsos-robots/compare/1.13.10...1.13.11) (2025-07-28)
+
+### Bug Fixes
+
+* change charts output folder ([540224a](https://github.com/angelacorte/experiments-2025-acsos-robots/commit/540224a506725094f8fb90390ee4556ee0fe8e1a))
+* explanation for charts generation ([cf76482](https://github.com/angelacorte/experiments-2025-acsos-robots/commit/cf764826a73f16a3633c2542ff7161105edc86a5))
+
+### General maintenance
+
+* **release:** update gradle.properties .env versions to 1.13.10 [skip ci] ([a3cac16](https://github.com/angelacorte/experiments-2025-acsos-robots/commit/a3cac1666b910194d44bfe2d462a56acf76e321e))
+* update readme ([e6a24a7](https://github.com/angelacorte/experiments-2025-acsos-robots/commit/e6a24a75c98b5bb84a7ad678b305ace043033cd3))
+
 ## [1.13.10](https://github.com/angelacorte/experiments-2025-acsos-robots/compare/1.13.9...1.13.10) (2025-07-28)
 
 ### Bug Fixes
