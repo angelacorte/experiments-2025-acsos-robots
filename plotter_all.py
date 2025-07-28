@@ -288,9 +288,9 @@ def create_grid_plot_base(plot_func, data_sources, x_label, y_label, plot_title,
     plt.suptitle(plot_title, fontsize=22)
 
     # Create directory if it doesn't exist
-    os.makedirs("xarray_plots", exist_ok=True)
+    os.makedirs("charts", exist_ok=True)
     # Save the figure
-    plt.savefig(f"xarray_plots/{filename}")
+    plt.savefig(f"charts/{filename}")
     plt.close()
 
 def create_grid_plot_failure(leader_based, plot_title, filename, legend=True):
