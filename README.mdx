@@ -29,6 +29,7 @@ This artifact is associated with the full paper article accepted in the Main Tra
         * [Extremely quick-start of a basic experiment -- `(ba|z|fi)?sh` users only](#extremely-quick-start-of-a-basic-experiment----bazfish-users-only)
         * [Reproduce the experiments through Gradle](#reproduce-the-experiments-through-gradle)
         * [Changing experiment's parameters](#changing-experiments-parameters)
+        * [Project structure](#project-structure)
         * [Simulation entrypoint](#simulation-entrypoint)
     - [Reproduce the experiment results](#reproduce-the-experiment-results)
         * [Reproduce the experiments with containers (recommended)](#reproduce-the-experiments-with-containers-recommended)
@@ -256,6 +257,28 @@ The parameters provided in the YAML files are the ones used for the evaluation a
 
 For further information about the YAML structure,
 please refer to the [Alchemist documentation](https://alchemistsimulator.github.io/reference/yaml/index.html).
+
+#### Project structure
+
+The project is structured in the following way:
+```txt
+experiments-2025-acsos-robots/
+├── docker/                 # Dockerfiles to build containers
+├── effects/                # Json specification for Alchemist's GUI visualization
+├── gradle/                 # Gradle wrapper files
+├── images/                 # Images used in the README
+├── src/main
+│   ├── kotlin/it.unibo/    # Kotlin source code for the experiments
+│   │   ├── alchemist       # Alchemist's model and global reactions
+│   │   │   ├── collektive.device  # Collektive device integration for Alchemist
+│   │   │   ├── model           # Alchemist's model for the experiments such as random failures, move strategies, location sensors, etc.
+│   │   ├── collektive.program  # The main Collektive logic for the experiments
+│   │   │   ├── Follower.kt     # The entrypoint for the baseline experiments
+│   │   │   ├── Replanning.kt   # The entrypoint for the runtime replanning experiments
+│   │   ├── formalization       # Formalization of the experiments, such as allocation strategies and task completion
+│   ├── resources   # Resources (such as images) for the experiments environment
+│   └── yaml        # YAML files for the experiments specification
+```
 
 #### Simulation entrypoint
 
